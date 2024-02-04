@@ -33,6 +33,9 @@ class Item(models.Model):
 
 ## Changes to Djnago:
   1. python manage.py makemigrations food
+## To create Database Table:
+  1. python manage.py sqlmigrate food 0001
+  2. python manage.py migrate
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
