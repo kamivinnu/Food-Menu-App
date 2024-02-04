@@ -20,6 +20,16 @@
   3. from . import views
       from django.urls import path
   4. urlpatterns = path['', views.index, name = 'index']
+
+### Databases and Models
+### Models:
+  1. Models are the blueprint where allows us to create database tables.
+  2. Models are the Classes of python.
+class Item(models.Model):
+    item_name = models.CharField(max_length = 200)
+    item_desc = models.CharField(max_length = 200)
+    item_price = models.IntegerField()
+  3. Configure Apps in Installed Apps in settings file - 'food.app.FoodConfig'
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
