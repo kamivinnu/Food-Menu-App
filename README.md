@@ -30,6 +30,9 @@ class Item(models.Model):
     item_desc = models.CharField(max_length = 200)
     item_price = models.IntegerField()
   3. Configure Apps in Installed Apps in settings file - 'food.app.FoodConfig'
+
+## Changes to Djnago:
+  1. python manage.py makemigrations food
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
