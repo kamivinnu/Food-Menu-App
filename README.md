@@ -6,6 +6,20 @@
   3. Install Django: pip install django
   4. Start Project : django-admin startproject project_name .
   5. Run Server : python manage.py runserver
+  6. Create App : python manage.py startapp appname
+## Step 2: views and urls 
+### Views:
+  1. def index(request):
+       return HttpResponse("Hello World")
+  2. from django.http import HttpResponse
+  3. To view this hello world in our browser, we have to create urls.py file in app
+
+### urls in app:
+  1. urlpatterns = path['',]
+  2. To define views in urls,
+  3. from . import views
+      from django.urls import path
+  4. urlpatterns = path['', views.index, name = 'index']
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
