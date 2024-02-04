@@ -1,4 +1,11 @@
 # Food-Menu-App
+
+## Create and Setup Django Project:
+  1. Create Virtual env: For Windows : py -m venv env
+  2. Activate ENV: .\env\Scripts\Activate
+  3. Install Django: pip install django
+  4. Start Project : django-admin startproject project_name .
+  5. Run Server : python manage.py runserver
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
