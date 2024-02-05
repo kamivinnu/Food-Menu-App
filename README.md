@@ -20,6 +20,8 @@
   3. from . import views
       from django.urls import path
   4. urlpatterns = path['', views.index, name = 'index']
+  5. Add URLS of Project :
+       path('food', include('food.urls'),
 
 ### Databases and Models
 ### Models:
