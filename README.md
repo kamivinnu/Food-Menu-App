@@ -38,6 +38,49 @@ class Item(models.Model):
 ## To create Database Table:
   1. python manage.py sqlmigrate food 0001
   2. python manage.py migrate
+## Steps Invovled in adding the data to database
+  1. Database Abstruction API - create, update, delete ---- Object
+  2. Adding the data to database
+  3. python manage.py shell
+  4. from food.models import Item
+  5. to see the data in the Item - type- Item.objects.all()
+  6. a = Item(item_name = 'Pizza', item_desc = 'cheese pizza', item_price = 20)
+  7. a.save()
+  8. a.id or a.pk
+  9. b = Item(item_name = 'Burger', item_desc = 'Cheesy  burger', item_price = 25)
+  10. b.save()
+  11. b.id or b.pk
+  12. Item.objects.all()
+  13. to view
+  14. def __str__(self):
+        return self.item_name
+  15. The above should write in models.py file
+  16. exit()
+  17. This process is time consuming and length to write.
+  18. Soo for this django have admin panel - create super user account
+
+## Django Admin Panel- Super User Account
+  1. python manage.py createsuperuser
+  2. Open the Development Server
+  3. Add Admin/
+  4. We cannot find a Item Database
+  5. To do this, open admin.py file to register models.py
+  6. admin.site.register(Item)
+  7. from.models import Item
+  8. Refresh
+
+## retrieve Data from Database
+  1. Open Views.py
+  2. from .models import Item
+  3. item_list = Item.objects.all() in item user defined function
+  4. return HttpResponse(item_list)
+  5. open new tab after viewing
+  6. In new tab open admin and add data
+  7. Come back to previous tab and refresh
+  8. To add layout to the page, we use templates
+
+## Templates
+
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
