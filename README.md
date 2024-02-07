@@ -1,13 +1,14 @@
 # Food-Menu-App
 
-## Create and Setup Django Project:
+# 1 Create and Setup Django Project:
   1. Create Virtual env: For Windows : py -m venv env
   2. Activate ENV: .\env\Scripts\Activate
   3. Install Django: pip install django
   4. Start Project : django-admin startproject project_name .
   5. Run Server : python manage.py runserver
   6. Create App : python manage.py startapp appname
-## Step 2: views and urls 
+
+# Step 2: views and urls 
 ### Views:
   1. def index(request):
        return HttpResponse("Hello World")
@@ -23,7 +24,7 @@
   5. Add URLS of Project :
        path('food', include('food.urls'),
 
-### Databases and Models
+# Step 3: Databases and Models
 ### Models:
   1. Models are the blueprint where allows us to create database tables.
   2. Models are the Classes of python.
@@ -79,8 +80,43 @@ class Item(models.Model):
   7. Come back to previous tab and refresh
   8. To add layout to the page, we use templates
 
-## Templates
+# Step 4:  Templates
+## 4.1 Django Templates
+  1. Django Template Engine
+  2. Open Setting.py and you can see templates
+  3. create templates directory in food app
+  4. Inside templates directory - create food directory
+  5. Inside Food Directory - create HTML file as index.html
+  6. In index.html - body -> h1 - This is my template
+  7. open views.py - from django.template import loader
+  8. In user def -     template = loader.get_template('food/index.html')
+  9. def index(request):
+      item_list = Item.objects.all()
+      template = loader.get_template('food/index.html')
+      context = {
 
+      }
+      return HttpResponse(template.render(context, request))
+## 4.2 Passing Context to Template
+  1. context = {
+        'item_list':item_list
+    }
+  2. clear index.html and add
+  3.   {% for item in item_list %}
+        {{ item.id }} -- {{ item.item_name }}
+      {% endfor %}
+  4. The above is uneasy, instead we use
+  5. {% for item in item_list %}
+    
+      <ul>
+        <li>
+            {{ item.id }} -- {{ item.item_name }}
+        </li>
+      </ul>
+      {% endfor %}
+  6. change - return HttpResponse(template.render(context, request))
+  7. update - return render(request, 'food/index.html', context)
+  8. using render function is very efficient
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
