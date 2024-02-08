@@ -117,6 +117,67 @@ class Item(models.Model):
   6. change - return HttpResponse(template.render(context, request))
   7. update - return render(request, 'food/index.html', context)
   8. using render function is very efficient
+
+## 4.3 Creating the detail view
+  1. whenever we click on pizza, it has to open a new page in detail.
+  2. to do that we have to open views file and create def detail.
+  3. def detail(request,item_id):
+      return HttpResponse(f"This is Item no/id : {id}")
+  4. In urls of app, add
+  5. def detail(request,item_id):
+      return HttpResponse(f"This is Item no/id : {item_id}")
+## 4.4 Completing the detail view
+  1. create detail.html in templates\food
+  2. In detail.html
+  3. <h1>{{ item.item_name }}</h1>
+      <h2>{{ item.item_desc }}</h2>
+      <h3>{{ item.item_price }}</h3>
+  4. open and add render func for efficient purpose
+  5. def detail(request,item_id):
+        item = Item.objects.get(pk = item_id)
+        context = {
+          'item':item,
+        }
+        return render(request, 'food/detail.html', context)
+  6. Now we create hyper links to dirctly access the page
+  7. open index.html and add
+  8. {% for item in item_list %}
+    
+      <ul>
+        <li>
+            
+            <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a>
+        </li>
+      </ul>
+    {% endfor %}
+
+## 4.5 Django Template Language
+  1. Template engine? - Jinja2 - templating engine; Django's Default engine - Django Template Language[DTL]
+
+## 4.6 Removing Hardcoded URLS
+  1. In indx.html commit
+  2. {% for item in item_list %}
+    
+      <ul>
+        <li>
+            
+            <!-- <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a> -->
+            
+            <a href="{% url 'detail' item.id %}">{{ item.id }} -- {{ item.item_name }}</a>
+        </li>
+      </ul>
+      {% endfor %}
+
+## 4.7 NameSpacing
+  1. Multiple apps with same views name.
+  2. To avoid confusion , we have to define namespacing for each apps used in urls
+  3. app_name = 'food'
+      urlpatterns = [ ]
+  4. open index.html and add
+  5. <a href="{% url 'food:detail' item.id %}">{{ item.id }} -- {{ item.item_name }}</a>
+
+# 5. Static files and Site Design
+
 # Django Introduction
 ## What is Django?
 Django is a Python framework that makes it easier to create web sites using Python.
