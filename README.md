@@ -4,9 +4,9 @@
   1. Create Virtual env: For Windows : py -m venv env
   2. Activate ENV: .\env\Scripts\Activate
   3. Install Django: pip install django
-  4. Start Project : django-admin startproject project_name .
+  4. Start Project : django-admin startproject project_name . (mysite)
   5. Run Server : python manage.py runserver
-  6. Create App : python manage.py startapp appname
+  6. Create App : python manage.py startapp appname (food)
 
 # Step 2: views and urls 
 ### Views:
