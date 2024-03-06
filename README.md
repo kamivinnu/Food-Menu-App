@@ -1,3 +1,59 @@
+In this hands-on course, you will learn how to build complex web applications from scratch using Django.
+
+The course will teach you Django, right from scratch from a very basic level and will gradually move towards advanced topics like authentication.
+
+The entire course is divided into 17 major sections.
+
+Here is a brief description of what you will learn in each section of the course:
+
+Section 1: Introduction and installing required software.
+
+In this section we will learn what Django is and why it is used. We will also install the tools you will need to start making Django web apps.
+
+Section 2: Setting up Django project:
+
+In this section we will learn about setting up the Django project, using the development server.
+
+Section 3: Views & URL patterns in Django.
+
+We learn about what the MVT (model-view-template) architecture by starting off by creating views in Django, we will also learn what URL patters are and how they help us to setup routes for our website.
+
+Section 4: Database & Models:
+
+This section covers content about how to create models in Django and how models help us to create database tables.
+
+Section 5: Templates:
+
+In this section will learn about templates in Django and how we can pass data from the database to Django templates.
+
+Section 6: Static Files & Site design:
+
+This section will teach you how to use static content in your site such as static images, JavaScript etc and how to use these static elements to style up your web-page.
+
+Section 7: Forms.
+
+Every Django app needs to submit data to the back-end, this section covers how to create forms in Django which allow us to perform basic CRUD operations i.e. create, read, update & delete.
+
+Section 8: Authentication in Django:
+
+Every web-app needs to make sure that it provides a registration and login feature, in this section we learn exactly how to authenticate users on our site and log them in.
+
+We will also learn how to password-protect certain webpages in Django.
+
+Section 9: Django signals, Class based views in Django:
+
+This section covers Django signals and class based views in Django, which is an alternative to creating function based views.
+
+Section 10: REST APIs
+
+In this section we will learn Django Rest Framework which helps us to create a REST API using Django for any Django web application.
+
+Section 11: Pagination, Search & User permissions.
+
+Every modern web app needs advanced features like pagination, & search. We learn how to paginate out webpages and how to add search functionality to our webpages in Django. We also learn how to add user permissions to our Django models so that only a certain set of users on our app have access to certain models.
+
+
+
 # Food-Menu-App
 
 # 1 Create and Setup Django Project:
@@ -81,13 +137,15 @@ class Item(models.Model):
   8. To add layout to the page, we use templates
 
 # Step 4:  Templates
+Templates allows us to create HTML
+Template - Simple HTML File
 ## 4.1 Django Templates
   1. Django Template Engine
   2. Open Setting.py and you can see templates
   3. create templates directory in food app
   4. Inside templates directory - create food directory
   5. Inside Food Directory - create HTML file as index.html
-  6. In index.html - body -> h1 - This is my template
+  6. In index.html - body -> <h1>This is my template</h1>
   7. open views.py - from django.template import loader
   8. In user def -     template = loader.get_template('food/index.html')
   9. def index(request):
@@ -99,7 +157,7 @@ class Item(models.Model):
       return HttpResponse(template.render(context, request))
 ## 4.2 Passing Context to Template
   1. context = {
-        'item_list':item_list
+        'item_list':item_list, (comma compulsory)
     }
   2. clear index.html and add
   3.   {% for item in item_list %}
