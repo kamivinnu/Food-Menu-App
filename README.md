@@ -88,7 +88,7 @@ class Item(models.Model):
     item_name = models.CharField(max_length = 200)
     item_desc = models.CharField(max_length = 200)
     item_price = models.IntegerField()
-  3. Configure Apps in -Installed Apps- in settings file - 'food.app.FoodConfig'
+  3. Configure Apps in -Installed Apps- in settings file - 'food.apps.FoodConfig'
 
 ## Changes to Djnago:
   1. python manage.py makemigrations food
