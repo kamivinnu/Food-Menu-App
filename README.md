@@ -1,6 +1,6 @@
 In this hands-on course, you will learn how to build complex web applications from scratch using Django.
 
-The course will teach you Django, right from scratch from a very basic level and will gradually move towards advanced topics like authentication.
+The course will teach you Django, right from scratch from a very basic level and will gradually move towards advanced topics like authentication. 
 
 The entire course is divided into 17 major sections.
 
