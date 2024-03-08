@@ -155,6 +155,7 @@ Template - Simple HTML File
 
       }
       return HttpResponse(template.render(context, request))
+     
 ## 4.2 Passing Context to Template
   1. context = {
         'item_list':item_list, (comma compulsory)
@@ -180,10 +181,18 @@ Template - Simple HTML File
   1. whenever we click on pizza, it has to open a new page in detail.
   2. to do that we have to open views file and create def detail.
   3. def detail(request,item_id):
-      return HttpResponse(f"This is Item no/id : {id}")
-  4. In urls of app, add
-  5. def detail(request,item_id):
       return HttpResponse(f"This is Item no/id : {item_id}")
+  4. In urls of app, add
+  5. urlpatterns = [
+      # food/
+    path('', views.index, name = 'index'),
+      # food/mahesh
+    path('mahesh', views.mahesh, name='mahesh'),
+      # food/1
+    path('<int:item_id>/', views.detail, name='detail'),
+]  
+  7. Open the browser and check food/1 or food/2
+  
 ## 4.4 Completing the detail view
   1. create detail.html in templates\food
   2. In detail.html
